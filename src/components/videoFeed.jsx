@@ -3,6 +3,16 @@ import useCamera from '../hooks/useCamera'
 import useSpeechRecognition from '../hooks/useSpeechRecognition'
 import { sendToGemini } from '../services/geminiService'
 
+function cleanResponse(str) {
+  if (!str) return "";
+  
+  return str
+    .replace(/\*\*/g, "")      // remove bold markdown
+    .replace(/\*/g, "")        // remove single asterisk if any
+    .replace(/_/g, "")         // remove underline markdown
+    .replace(/#/g, "")         // remove heading markers
+    .trim();
+}
 
 export default function VideoFeed({ setStatus, setResponseText, speak }) {
 const videoRef = useRef(null)
@@ -25,8 +35,8 @@ return
 setStatus('Thinking...')
 try {
 const text = await sendToGemini(transcript, base64)
-setResponseText(text.replace(/\*\*/g, ""))
-speak(text.replace(/\*\*/g, ""))
+setResponseText(cleanResponse(text))
+speak(cleanResponse(text))
 } catch (err) {
 console.error(err)
 setStatus('Error connecting to AI. Please try again.')
