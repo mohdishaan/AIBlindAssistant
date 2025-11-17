@@ -26,7 +26,7 @@ setStatus('Thinking...')
 try {
 const text = await sendToGemini(transcript, base64)
 setResponseText(text.replace(/\*\*/g, ""))
-speak(text)
+speak(text.replace(/\*\*/g, ""))
 } catch (err) {
 console.error(err)
 setStatus('Error connecting to AI. Please try again.')
