@@ -27,7 +27,7 @@ return (
 </main>
 
 
-<footer className="text-center py-10 text-gray-500">&copy; 2025 VisionLink AI. All rights reserved.</footer>
+<footer className="text-center py-10 text-gray-500">&copy; 2025 VisionVoice. All rights reserved.</footer>
 </div>
 )
 }
