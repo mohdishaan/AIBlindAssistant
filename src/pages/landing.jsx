@@ -10,7 +10,7 @@ return (
 <div className="min-h-screen animated-gradient-bg text-gray-200">
 <header className="sticky top-0 z-50 bg-gray-900/30 backdrop-blur-lg border-b border-white/10">
 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-<div className="text-2xl font-bold">VisionLink <span className="text-cyan-400">AI</span></div>
+<div className="text-2xl font-bold">VisionVoice <span className="text-cyan-400"></span></div>
 <nav className="flex items-center space-x-6">
 <button onClick={() => navigate('/assistant')} className="bg-cyan-500/80 hover:bg-cyan-500 text-white font-semibold py-2 px-5 rounded-full text-sm">Launch App</button>
 </nav>
